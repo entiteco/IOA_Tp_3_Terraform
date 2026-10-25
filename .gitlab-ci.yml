@@ -4,7 +4,9 @@ stages:
 
 terraform-validate:
   stage: validate
-  image: hashicorp/terraform:latest
+  image: 
+    name: hashicorp/terraform:latest
+    entrypoint: [""]
   script:
     - terraform init -backend=false
     - terraform fmt -check
