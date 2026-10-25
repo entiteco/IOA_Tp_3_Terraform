@@ -14,4 +14,4 @@ afficher-environnement:
   stage: info
   image: alpine:latest
   script:
-    - echo "Deploiement cible : $APP_ENV"
+    - 'echo "Deploiement cible: $APP_ENV"'
