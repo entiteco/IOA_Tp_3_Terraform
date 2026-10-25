@@ -60,7 +60,7 @@ Ce projet illustre les principes de l'Infrastructure as Code (IaC) à l'aide de 
 
 ---
 
-## Réponses aux questions de compréhension
+## Réponses aux questions de compréhension 
 
 **1. À l’Étape 5, pourquoi changer le port force-t-il Terraform à recréer le conteneur plutôt qu’à simplement le modifier, alors que le réseau et l’image, eux, restent inchangés ?**
 Les conteneurs Docker sont conçus pour être éphémères et immuables. L'API de Docker ne permet pas de modifier les ports exposés d'un conteneur en cours d'exécution. Le provider Terraform comprend cette contrainte technique et sait qu'il doit détruire l'ancien conteneur pour en instancier un nouveau avec les bons paramètres. Le réseau et l'image ne dépendent pas du port du conteneur, Terraform les laisse donc intacts.
