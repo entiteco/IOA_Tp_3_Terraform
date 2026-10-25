@@ -1,0 +1,17 @@
+stages:
+  - validate
+  - info
+
+terraform-validate:
+  stage: validate
+  image: hashicorp/terraform:latest
+  script:
+    - terraform init -backend=false
+    - terraform fmt -check
+    - terraform validate
+
+afficher-environnement:
+  stage: info
+  image: alpine:latest
+  script:
+    - echo "Deploiement cible : $APP_ENV"
